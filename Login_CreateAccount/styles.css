@@ -18,6 +18,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 50px;
 }
 
 .container i {
@@ -92,9 +93,22 @@ body {
     width: 50%;
     height: 100%;
     background: linear-gradient(to right, #9fadff, #647bff);
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
 }
 
 .select h1 {
-    display: flex;
-    text-align: center;
+    position: relative;
+    left: 70px;
+    top: 120px;
+    font-size: 50px;
+}
+
+.select button {
+    position: relative;
+    top: 170px;
+    left: 100px;
+    width: 190px;
+    height: 50px;
+    border: 2px solid #ffffff;
 }
