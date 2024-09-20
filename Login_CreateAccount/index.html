@@ -9,42 +9,53 @@
 </head>
 <body>
     
-    <div class="container">
-        <div class="login">
-            <h1>Welcome Back.</h1>
-            <div class="login-icons">
-                <a href="#"><i class='bx bxl-google-plus'></i></a>
-                <a href="#"><i class='bx bxl-facebook' ></i></a>
-                <a href="#"><i class='bx bxl-github' ></i></a>
+    <div class="container" id="container">
+      <div class="form-container sign-up" id="sign-up">
+         <form>
+            <h1>Create Account</h1>
+            <div class="social-icons">
+               <a href="#" class="icons"><i class='bx bxl-google'></i></a>
+               <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
+               <a href="#" class="icons"><i class='bx bxl-github'></i></a>
             </div>
-            <form action="">
-                <input type="email" name="email" class="email" placeholder="Enter Email...">
-                <input type="password" name="password" class="password" placeholder="Enter Password...">
-            </form>
-            <button class="signin">Sign In</button>
-            <a href="#" class="forget" style="position: relative;top: 20px;">Forgot Password</a>
-        </div>
-        <div class="signup">
-            <h1>Hello</h1>
-            <div class="login-icons">
-                <a href="#"><i class='bx bxl-google-plus'></i></a>
-                <a href="#"><i class='bx bxl-facebook' ></i></a>
-                <a href="#"><i class='bx bxl-github' ></i></a>
-            </div>
-            <form action="">
-                <input type="Username" name="Username" class="Username" placeholder="Enter Username...">
-                <input type="email" name="email" class="email" placeholder="Enter Email...">
-                <input type="password" name="password" class="password" placeholder="Enter Password...">
-            </form>
-            <button class="create_account" style="position: relative;top: 10px;">Create Account</button>
-        </div>
-        <div class="select">
-            <h1>Hello, User</h1>
+            <span>Or use your email.</span>  
+            <input type="name" name="name" id="name" placeholder="Enter name...">
+            <input type="email" name="email" id="email" placeholder="Enter email...">
+            <input type="password" name="password" id="password" placeholder="Enter password...">
             <button>Sign Up</button>
-        </div>
-
+         </form>
+      </div>
+      <div class="form-container sign-in">
+         <form>
+            <h1>Sign In</h1>
+            <div class="social-icons">
+               <a href="#" class="icons"><i class='bx bxl-google'></i></a>
+               <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
+               <a href="#" class="icons"><i class='bx bxl-github'></i></a>
+            </div>
+            <span>Or use your email.</span>  
+            <input type="email" name="email" id="email" placeholder="Enter email...">
+            <input type="password" name="password" id="password" placeholder="Enter password...">
+            <a href="#">Forgot Password?</a>
+            <button>Sign In</button>
+         </form>
+      </div>
+      <div class="toggle-container">
+         <div class="toggle">
+            <div class="toggle-panel toggle-left">
+               <h1>Welcome Back.</h1>
+               <p>Enter Your Details.</p>
+               <button class="hidden" id="login">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+               <h1>Hello User.</h1>
+               <p>Enter Your Details To Register</p>
+               <button class="hidden" id="register">Sign Up</button>
+            </div>
+         </div>
+      </div>
     </div>
 
-    <script src=""></script>
+    <script src="script.js"></script>
 </body>
 </html>
