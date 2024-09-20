@@ -3,112 +3,206 @@
 * {
     padding: 0;
     margin: 0;
-}
-
-body {
-    background: #ffffff;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-.container {
-    border: 2px solid #000000;
-    height: 500px;
-    width: 800px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50px;
+body {
+    background: #c9d6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.container i {
-    padding: 10px 10px;
-    border-radius: 20px;
-    border: 2px solid #909090;
-    font-size: 30px;
+.container {
+    background: #fff;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    width: 770px;
+    max-width: 100%;
+    height: 480px;
+}
+
+.container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span {
+    font-size: 12px;
 }
 
 .container a {
-    color: #000000;
-}
-
-.container .login {
-    width: 45%;
-    height: 100%;
-    padding: 10px 10px;
-    text-align: center;
-    position: absolute;
-    top: 110px;
-    display: flex;
-    flex-direction: column;
-}
-
-.container input {
-    height: 40px;
-    border-radius: 20px;
-    text-indent: 20px;
-    font-size: 15px;
-    margin-top: 10px;
-}
-
-.container .login form {
-    display: flex;
-    flex-direction: column;
-}
-
-.container .signup {
-    right: 0;
-    width: 45%;
-    height: 100%;
-    padding: 10px 10px;
-    text-align: center;
-    position: absolute;
-    top: 80px;
-}
-
-.container .signup form {
-    display: flex;
-    flex-direction: column;
+    color: #444;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
 }
 
 .container button {
-    height: 40px;
-    width: 200px;
-    background: #678aff;
-    font-size: 20px;
-    border-radius: 10px;
+    background: #512da8;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.container .signin {
-    position: relative;
-    left: 50%;
-    top: 10px;
-    transform: translateX(-50%);
+.container button.hidden {
+    background: transparent;
+    border: 2px solid #ffffff;
 }
 
+.container form {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
 
-.container .select {
+.container input {
+    background: #ebebeb;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.form-container {
     position: absolute;
+    top: 0;
+    height: 100%;
+    transition: 0.3s all ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+}
+
+.sign-up {
     right: 0;
     width: 50%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+    animation: 0.6s;
+}
+
+@keyframes move {
+    0%, 49.99%  {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
     height: 100%;
-    background: linear-gradient(to right, #9fadff, #647bff);
-    border-top-right-radius: 42px;
-    border-bottom-right-radius: 42px;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+    border-radius: 100px 0 0 100px;
 }
 
-.select h1 {
-    position: relative;
-    left: 70px;
-    top: 120px;
-    font-size: 50px;
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 100px 100px 0;
 }
 
-.select button {
+.toggle {
+    background: #512da8;
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    color: #ffffff;
     position: relative;
-    top: 170px;
-    left: 100px;
-    width: 190px;
-    height: 50px;
-    border: 2px solid #ffffff;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
 }
